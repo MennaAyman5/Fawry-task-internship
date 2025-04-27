@@ -36,10 +36,10 @@
 │    - └── Support --help → Show usage instructions
 │
 - ├── 4. Testing Examples
-│    - ├── ./mygrep.sh hello testfile.txt
-│    - ├── ./mygrep.sh -n hello testfile.txt
-│    - ├── ./mygrep.sh -vn hello testfile.txt
-│    - └── ./mygrep.sh -v testfile.txt → Should display a warning
+│    -- ├── ./mygrep.sh hello testfile.txt
+│    -- ├── ./mygrep.sh -n hello testfile.txt
+│    -- ├── ./mygrep.sh -vn hello testfile.txt
+│    -- └── ./mygrep.sh -v testfile.txt → Should display a warning
 │
 - └── 5. Reflective Section
      - ├── Explain how the script processes the inputs and options
