@@ -19,32 +19,32 @@
 - It prints matching lines, optionally with line numbers.
 
 # mygrep.sh 
-│
+
 - ├── 1. Basic Functionality
-│     ├── Search for a text string inside a file
-│     ├── Ignore case differences (case-insensitive)
-│     └── Print lines containing the search string
+│    -  ├── Search for a text string inside a file
+│    -  ├── Ignore case differences (case-insensitive)
+│    -  └── Print lines containing the search string
 │
 - ├── 2. Option Support
-│     ├── -n → Print line numbers with each match
-│     ├── -v → Invert the match (print lines that "do not" contain the string)
-│     └── Allow combining options (-vn or -nv)
+│    -  ├── -n → Print line numbers with each match
+│    -  ├── -v → Invert the match (print lines that "do not" contain the string)
+│    -  └── Allow combining options (-vn or -nv)
 │
 - ├── 3. Error Handling
-│     ├── If the file does not exist → Print an error message
-│     ├── If input arguments are missing → Print an error message
-│     └── Support --help → Show usage instructions
+│    -  ├── If the file does not exist → Print an error message
+│    -  ├── If input arguments are missing → Print an error message
+│    -  └── Support --help → Show usage instructions
 │
 - ├── 4. Testing Examples
-│     ├── ./mygrep.sh hello testfile.txt
-│     ├── ./mygrep.sh -n hello testfile.txt
-│     ├── ./mygrep.sh -vn hello testfile.txt
-│     └── ./mygrep.sh -v testfile.txt → Should display a warning
+│    - ├── ./mygrep.sh hello testfile.txt
+│    - ├── ./mygrep.sh -n hello testfile.txt
+│    - ├── ./mygrep.sh -vn hello testfile.txt
+│    - └── ./mygrep.sh -v testfile.txt → Should display a warning
 │
 - └── 5. Reflective Section
-      ├── Explain how the script processes the inputs and options
-      ├── If you wanted to add regex or additional options, describe how you would modify the script
-      └── What was the hardest part you faced and how you solved it
+     - ├── Explain how the script processes the inputs and options
+     - ├── If you wanted to add regex or additional options, describe how you would modify the script
+     - └── What was the hardest part you faced and how you solved it
 
 
 
