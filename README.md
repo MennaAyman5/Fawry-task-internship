@@ -109,7 +109,7 @@ To solve this, I carefully used Boolean flags (`true`/`false`) and structured co
 # Q2 : Scenario
       
 ## 1. DNS Resolution Verification
-- Step 1: Check DNS Resolution using System's Default DNS \n hhh
+- Step 1: Check DNS Resolution using System's Default DNS 
 `nslookup internal.example.com`
 or
 `dig internal.example.com` 
@@ -124,19 +124,18 @@ or
 ---
 ## 2. Diagnose Service Reachability
 - Step 1: Confirm if the Web Service is Reachable
-Using `curl`:
-`curl http://internal.example.com`
-Using `telnet`:
-`telnet internal.example.com 80`
-or
-`telnet internal.example.com 443`
-Using `nc `(netcat):
-`nc -zv internal.example.com 80`
-`nc -zv internal.example.com 443`
+     - Using `curl`:
+            - `curl http://internal.example.com`
+     - Using `telnet`:
+          - `telnet internal.example.com 80` or
+          - `telnet internal.example.com 443`
+     - Using `nc `(netcat):
+          - `nc -zv internal.example.com 80`
+            `nc -zv internal.example.com 443`
 - Step 2: Check if Service is Listening Locally
-Using `ss`:
-`sudo ss -tuln | grep ':80\|:443'`
-- ✅ Service should be LISTENING on the correct port.
+     - Using `ss`:
+          - `sudo ss -tuln | grep ':80\|:443'`
+          - ✅ Service should be LISTENING on the correct port.
 
 ## 3. Possible Causes Why internal.example.com is Unreachable
 Cause | Description
