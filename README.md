@@ -121,7 +121,7 @@ or
 `dig @8.8.8.8 internal.example.com`
 
 - ✅ Compare if the result is different.
----
+  
 ## 2. Diagnose Service Reachability
 - Step 1: Confirm if the Web Service is Reachable
      - Using `curl`:
