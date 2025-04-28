@@ -113,7 +113,7 @@ To solve this, I carefully used Boolean flags (`true`/`false`) and structured co
 `nslookup internal.example.com`
 or
 `dig internal.example.com`
-✅ Should return an IP address.
+✅  Should return an IP address.
 
 - Step 2: Check DNS Resolution using Google's Public DNS (8.8.8.8)
 `nslookup internal.example.com 8.8.8.8`
