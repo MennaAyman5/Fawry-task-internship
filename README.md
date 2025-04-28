@@ -140,13 +140,13 @@ or
 ## 3. Possible Causes Why internal.example.com is Unreachable
 Cause | Description
 ------|------------
-1. DNS misconfiguration | Wrong DNS settings in /etc/resolv.conf.
-2. DNS server failure | Internal DNS server down or unreachable.
-3. Missing DNS Record | No A/AAAA record for internal.example.com.
-4. Firewall blocking | Firewall blocking port 80/443.
-5. Web service not running | Service crashed even if server is up.
-6. Network routing issues | Incorrect network route to the server.
-7. /etc/hosts conflict | Wrong entry in /etc/hosts overriding DNS.
+ DNS misconfiguration | Wrong DNS settings in /etc/resolv.conf.
+ DNS server failure | Internal DNS server down or unreachable.
+ Missing DNS Record | No A/AAAA record for internal.example.com.
+ Firewall blocking | Firewall blocking port 80/443.
+ Web service not running | Service crashed even if server is up.
+ Network routing issues | Incorrect network route to the server.
+ /etc/hosts conflict | Wrong entry in /etc/hosts overriding DNS.
 
 ## 4. Proposed Fixes and How to Confirm Each Issue
 
