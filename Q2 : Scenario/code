@@ -1,1 +1,39 @@
+ping internal.example.com
 
+nslookup internal.example.com
+# or
+dig internal.example.com
+
+nslookup internal.example.com 8.8.8.8
+# or
+dig @8.8.8.8 internal.example.com
+
+curl http://internal.example.com
+
+telnet internal.example.com 80
+# or
+telnet internal.example.com 443
+
+nc -zv internal.example.com 80
+nc -zv internal.example.com 443
+
+sudo ss -tuln | grep ':80\|:443'
+
+sudo netstat -tuln | grep ':80\|:443'
+
+sudo nano /etc/hosts
+# Add:
+192.168.1.100 internal.example.com
+
+sudo systemctl enable systemd-resolved
+sudo systemctl start systemd-resolved
+sudo systemctl status systemd-resolved
+
+nmcli device show
+nmcli con edit "your-connection-name"
+# Then inside:
+set ipv4.dns "8.8.8.8 8.8.4.4"
+save
+quit
+
+sudo systemctl restart NetworkManager
