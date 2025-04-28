@@ -162,8 +162,7 @@ Wrong /etc/hosts | cat /etc/hosts | Edit file to correct IPs
 
 ## 5. Bonus
 ✅ Configure Local /etc/hosts Entry:
-`sudo nano /etc/hosts`
-# Add:
+`sudo nano /etc/hosts` # Add:
 `192.168.1.100 internal.example.com`
 ✅ Persist DNS Settings with systemd-resolved:
 `sudo systemctl enable systemd-resolved`
@@ -172,8 +171,7 @@ Wrong /etc/hosts | cat /etc/hosts | Edit file to correct IPs
 
 ✅ Persist DNS Settings with NetworkManager:
 `nmcli device show`
-`nmcli con edit "your-connection-name"`
-# Then inside:
+`nmcli con edit "your-connection-name"`# Then inside:
 `set ipv4.dns "8.8.8.8 8.8.4.4"`
 `save`
 `quit`
