@@ -139,6 +139,7 @@ or
 
 ## 3. Possible Causes Why internal.example.com is Unreachable
 Cause | Description
+------|------------
 1. DNS misconfiguration | Wrong DNS settings in /etc/resolv.conf.
 2. DNS server failure | Internal DNS server down or unreachable.
 3. Missing DNS Record | No A/AAAA record for internal.example.com.
@@ -150,6 +151,7 @@ Cause | Description
 ## 4. Proposed Fixes and How to Confirm Each Issue
 
 Issue | How to Confirm | Fix Commands
+------|----------------|-------------
 DNS misconfiguration | cat /etc/resolv.conf | Update DNS server in /etc/resolv.conf
 DNS server failure | ping DNS_SERVER_IP | Restart DNS server or use another one
 Missing DNS Record | dig internal.example.com | Add record in DNS server
