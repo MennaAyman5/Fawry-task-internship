@@ -109,18 +109,18 @@ To solve this, I carefully used Boolean flags (`true`/`false`) and structured co
 # Q2 : Scenario
       
 ## 1. DNS Resolution Verification
-- Step 1: Check DNS Resolution using System's Default DNS
+- Step 1: Check DNS Resolution using System's Default DNS \n hhh
 `nslookup internal.example.com`
 or
-`dig internal.example.com`
-✅  Should return an IP address.
+`dig internal.example.com` 
+- ✅ Should return an IP address.
 
 - Step 2: Check DNS Resolution using Google's Public DNS (8.8.8.8)
 `nslookup internal.example.com 8.8.8.8`
 or
 `dig @8.8.8.8 internal.example.com`
 
-✅  Compare if the result is different.
+- ✅ Compare if the result is different.
 ---
 ## 2. Diagnose Service Reachability
 - Step 1: Confirm if the Web Service is Reachable
@@ -136,7 +136,7 @@ Using `nc `(netcat):
 - Step 2: Check if Service is Listening Locally
 Using `ss`:
 `sudo ss -tuln | grep ':80\|:443'`
-✅  Service should be LISTENING on the correct port.
+- ✅ Service should be LISTENING on the correct port.
 
 ## 3. Possible Causes Why internal.example.com is Unreachable
 Cause | Description
