@@ -161,22 +161,22 @@ Network routing issue | traceroute internal.example.com | Fix routing tables or 
 Wrong /etc/hosts | cat /etc/hosts | Edit file to correct IPs
 
 ## 5. Bonus
-✅ Configure Local /etc/hosts Entry:
-`sudo nano /etc/hosts` # Add:
-`192.168.1.100 internal.example.com`
-✅ Persist DNS Settings with systemd-resolved:
-`sudo systemctl enable systemd-resolved`
-`sudo systemctl start systemd-resolved`
-`sudo systemctl status systemd-resolved`
+- ✅ Configure Local /etc/hosts Entry:
+     - `sudo nano /etc/hosts` 
+     - `192.168.1.100 internal.example.com`
+- ✅ Persist DNS Settings with systemd-resolved:
+     - `sudo systemctl enable systemd-resolved`
+      `sudo systemctl start systemd-resolved`
+      `sudo systemctl status systemd-resolved`
 
-✅ Persist DNS Settings with NetworkManager:
-`nmcli device show`
-`nmcli con edit "your-connection-name"`# Then inside:
-`set ipv4.dns "8.8.8.8 8.8.4.4"`
-`save`
-`quit`
-Then restart network:
-`sudo systemctl restart NetworkManager`
+- ✅ Persist DNS Settings with NetworkManager:
+     - `nmcli device show`
+      `nmcli con edit "your-connection-name"`
+      `set ipv4.dns "8.8.8.8 8.8.4.4"`
+      `save`
+      `quit`
+- Then restart network:
+     - `sudo systemctl restart NetworkManager`
 
 
 
