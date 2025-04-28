@@ -111,13 +111,13 @@ To solve this, I carefully used Boolean flags (`true`/`false`) and structured co
 ## 1. DNS Resolution Verification
 - Step 1: Check DNS Resolution using System's Default DNS
 `nslookup internal.example.com`
-# or
+or
 `dig internal.example.com`
 ✅ Should return an IP address.
 
 - Step 2: Check DNS Resolution using Google's Public DNS (8.8.8.8)
 `nslookup internal.example.com 8.8.8.8`
-# or
+or
 `dig @8.8.8.8 internal.example.com`
 
 ✅  Compare if the result is different.
@@ -128,7 +128,7 @@ Using `curl`:
 `curl http://internal.example.com`
 Using `telnet`:
 `telnet internal.example.com 80`
-# or
+or
 `telnet internal.example.com 443`
 Using `nc `(netcat):
 `nc -zv internal.example.com 80`
