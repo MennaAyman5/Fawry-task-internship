@@ -108,3 +108,91 @@ To solve this, I carefully used Boolean flags (`true`/`false`) and structured co
 
 # Q2 : Scenario
       
+## 1. DNS Resolution Verification
+- Step 1: Check DNS Resolution using System's Default DNS
+`nslookup internal.example.com`
+# or
+`dig internal.example.com`
+✅ Should return an IP address.
+
+- Step 2: Check DNS Resolution using Google's Public DNS (8.8.8.8)
+`nslookup internal.example.com 8.8.8.8`
+# or
+`dig @8.8.8.8 internal.example.com`
+
+✅  Compare if the result is different.
+---
+## 2. Diagnose Service Reachability
+- Step 1: Confirm if the Web Service is Reachable
+Using `curl`:
+`curl http://internal.example.com`
+Using `telnet`:
+`telnet internal.example.com 80`
+# or
+`telnet internal.example.com 443`
+Using `nc `(netcat):
+`nc -zv internal.example.com 80`
+`nc -zv internal.example.com 443`
+- Step 2: Check if Service is Listening Locally
+Using `ss`:
+`sudo ss -tuln | grep ':80\|:443'`
+✅  Service should be LISTENING on the correct port.
+
+## 3. Possible Causes Why internal.example.com is Unreachable
+Cause | Description
+1. DNS misconfiguration | Wrong DNS settings in /etc/resolv.conf.
+2. DNS server failure | Internal DNS server down or unreachable.
+3. Missing DNS Record | No A/AAAA record for internal.example.com.
+4. Firewall blocking | Firewall blocking port 80/443.
+5. Web service not running | Service crashed even if server is up.
+6. Network routing issues | Incorrect network route to the server.
+7. /etc/hosts conflict | Wrong entry in /etc/hosts overriding DNS.
+
+## 4. Proposed Fixes and How to Confirm Each Issue
+
+Issue | How to Confirm | Fix Commands
+DNS misconfiguration | cat /etc/resolv.conf | Update DNS server in /etc/resolv.conf
+DNS server failure | ping DNS_SERVER_IP | Restart DNS server or use another one
+Missing DNS Record | dig internal.example.com | Add record in DNS server
+Firewall blocking | sudo iptables -L | Open ports using sudo ufw allow 80,443/tcp
+Web service down | systemctl status nginx (or Apache) | Restart service: sudo systemctl restart nginx
+Network routing issue | traceroute internal.example.com | Fix routing tables or network config
+Wrong /etc/hosts | cat /etc/hosts | Edit file to correct IPs
+
+## 5. Bonus
+✅ Configure Local /etc/hosts Entry:
+`sudo nano /etc/hosts`
+# Add:
+`192.168.1.100 internal.example.com`
+✅ Persist DNS Settings with systemd-resolved:
+`sudo systemctl enable systemd-resolved`
+`sudo systemctl start systemd-resolved`
+`sudo systemctl status systemd-resolved`
+
+✅ Persist DNS Settings with NetworkManager:
+`nmcli device show`
+`nmcli con edit "your-connection-name"`
+# Then inside:
+`set ipv4.dns "8.8.8.8 8.8.4.4"`
+`save`
+`quit`
+Then restart network:
+`sudo systemctl restart NetworkManager`
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
