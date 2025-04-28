@@ -104,5 +104,7 @@ To solve this, I carefully used Boolean flags (`true`/`false`) and structured co
 - ✅ Mentioned challenges and how they were handled.
 
 ---
+---
 
+# Q2 : Scenario
       
