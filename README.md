@@ -1,4 +1,3 @@
-# Fawry-task-internship
 # Q1 : Custom Command (mygrep.sh)
 ## Explanation the task
 
